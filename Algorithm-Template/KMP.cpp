@@ -10,11 +10,13 @@ int search(string s,string p)
     int sLen = s.length();
     int pLen = p.length();
     int k = -1;
-    while (j < pLen - 1)
-        if (k == -1 || p[j] == p[k])
+    while (j < pLen - 1){
+    	if (k == -1 || p[j] == p[k])
             ++k, ++j, _next[j] = k;
         else
             k = _next[k];
+    }
+        
     j = 0;
     while (i < sLen && j < pLen)
     {   
